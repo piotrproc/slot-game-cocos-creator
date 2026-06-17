@@ -8,11 +8,6 @@ export class ReelController extends Component {
     @property([Prefab])
     symbolPrefabs: Prefab[] = [];
 
-    @property({
-        type: [SpriteFrame]
-    })
-    symbolFrames: SpriteFrame[] = [];
-
     private symbols: Node[] = [];
     private symbolHeight = 250;
 
@@ -26,7 +21,7 @@ export class ReelController extends Component {
         const visibleRows = 3;
         const bufferRows = 2;
 
-        for (let i = 0; i < visibleRows + bufferRows; i++) {
+        for (let i = 0; i < this.symbolPrefabs.length; i++) {
 
             const symbol = instantiate(this.symbolPrefabs[i]);
 
