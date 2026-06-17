@@ -1,6 +1,5 @@
 import { _decorator, Component, EventKeyboard, Input, input, KeyCode, Node } from 'cc';
-import { ReelController } from './ReelController';
-import { SpinButton } from "./SpinButton";
+import { ReelsController } from './ReelsController';
 
 const {ccclass, property} = _decorator;
 
@@ -8,9 +7,9 @@ const {ccclass, property} = _decorator;
 export class GameCtrl extends Component {
 
     @property({
-        type: ReelController
+        type: ReelsController
     })
-    public reelController: ReelController;
+    public reelController: ReelsController;
 
     @property({
         type: Node

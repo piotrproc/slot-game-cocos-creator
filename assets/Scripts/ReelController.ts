@@ -37,16 +37,11 @@ export class ReelController extends Component {
                 (i - 1) * this.symbolHeight
             );
 
-            // const comp = symbol.getComponent(Symbol);
-            // comp.setSprite(this.getRandomSymbol());
-
-            // this.randomizeSymbol(symbol);
-
             this.symbols.push(symbol);
         }
     }
 
-    update(dt: number) {
+    update(deltaTime: number) {
 
         if (this.hasStopped) {
             return;
@@ -58,7 +53,7 @@ export class ReelController extends Component {
 
             symbol.position = symbol.position.subtract3f(
                 0,
-                speed * dt,
+                speed * deltaTime,
                 0
             );
 
@@ -75,8 +70,6 @@ export class ReelController extends Component {
                     this.hasStopped = true;
                     this.isStopping = false;
                 }
-
-                // this.randomizeSymbol(symbol);
             }
         }
     }
@@ -98,7 +91,6 @@ export class ReelController extends Component {
     }
 
     private getTopSymbolY(): number {
-
         let top = -99999;
 
         for (const s of this.symbols) {
@@ -107,21 +99,6 @@ export class ReelController extends Component {
 
         return top;
     }
-
-    // private randomizeSymbol(node: Node) {
-    //
-    //     const idx = Math.floor(
-    //         Math.random() * this.symbolFrames.length
-    //     );
-    //
-    //     node.getComponent(Symbol)!
-    //         .setSprite(this.symbolFrames[idx]);
-    // }
-    //
-    // getRandomSymbol() {
-    //     const idx = Math.floor(Math.random() * this.symbols.length);
-    //     return this.symbols[idx];
-    // }
 }
 
 
