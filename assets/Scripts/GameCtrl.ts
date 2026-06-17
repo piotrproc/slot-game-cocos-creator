@@ -1,5 +1,6 @@
 import { _decorator, Component, EventKeyboard, Input, input, KeyCode, Node } from 'cc';
 import { ReelsController } from './ReelsController';
+import { Betline } from "./Betline";
 
 const {ccclass, property} = _decorator;
 
@@ -16,11 +17,17 @@ export class GameCtrl extends Component {
     })
     public spinButton: Node;
 
+    @property({
+        type: Betline
+    })
+    public betline: Betline;
+
     initListener() {
         input.on(Input.EventType.KEY_DOWN, this.onKeyDown, this);
 
         this.spinButton.on(Node.EventType.TOUCH_START, () => {
             this.reelController.toggle();
+            this.betline.draw();
         });
     }
 

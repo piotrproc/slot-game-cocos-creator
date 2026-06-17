@@ -18,9 +18,6 @@ export class ReelController extends Component {
 
         this.hasStopped = true;
 
-        const visibleRows = 3;
-        const bufferRows = 2;
-
         for (let i = 0; i < this.symbolPrefabs.length; i++) {
 
             const symbol = instantiate(this.symbolPrefabs[i]);

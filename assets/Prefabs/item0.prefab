@@ -1,7 +1,7 @@
 [
   {
     "__type__": "cc.Prefab",
-    "_name": "item1",
+    "_name": "item0",
     "_objFlags": 0,
     "__editorExtras__": {},
     "_native": "",
@@ -13,7 +13,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "item1",
+    "_name": "item0",
     "_objFlags": 0,
     "__editorExtras__": {},
     "_parent": null,
@@ -110,7 +110,7 @@
       "a": 255
     },
     "_spriteFrame": {
-      "__uuid__": "508da5f9-7350-40fa-ad8a-bac11d5b2f94@f9941",
+      "__uuid__": "23690251-306e-433b-b954-378b405d17a7@f9941",
       "__expectedType__": "cc.SpriteFrame"
     },
     "_type": 0,
