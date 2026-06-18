@@ -1,4 +1,4 @@
-import { _decorator, Component, instantiate, Node, Prefab, SpriteFrame } from 'cc';
+import { _decorator, CCInteger, Component, instantiate, Node, Prefab } from 'cc';
 import { SYMBOL_SIZE } from "./utils/consts";
 import { GameState } from "./utils/types";
 
@@ -9,6 +9,11 @@ export class ReelController extends Component {
 
     @property([Prefab])
     symbolPrefabs: Prefab[] = [];
+
+    @property({
+        type: CCInteger
+    })
+    public index: number;
 
     private symbols: Node[] = [];
     private symbolHeight = SYMBOL_SIZE;
@@ -62,6 +67,7 @@ export class ReelController extends Component {
                 if (this.state === "Stopping") {
                     this.state = "Stopped";
                     this.saveOutcome();
+                    // console.log("stopped", this.index);
                     this.onStopped();
                 }
             }
@@ -120,6 +126,8 @@ export class ReelController extends Component {
         this.outcome[0] = symbolsCopy[2];
         this.outcome[1] = symbolsCopy[1];
         this.outcome[2] = symbolsCopy[0];
+        // console.log(this.outcome)
+        // console.log(this.index)
     }
 }
 

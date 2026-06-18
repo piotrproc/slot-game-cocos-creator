@@ -10,7 +10,7 @@ export class Betline extends Component {
     private symbolSize = SYMBOL_SIZE;
     private graphics: GraphicsComponent;
 
-    draw() {
+    onLoad() {
         this.graphics = this.getComponent(Graphics)!
         this.clear();
 
@@ -20,7 +20,7 @@ export class Betline extends Component {
         // this.drawLine(g, [0,0,0,0,0]);
         // this.drawLine(g, [0,1,0,1,0]);
         // this.drawLine(g, [2, 1, 0, 1, 2]);
-        this.drawLine([0, 1, 2, 1, 2]);
+        // this.drawLine([0, 1, 2, 1, 2]);
     }
 
     drawLine(coordinates: BetlineCoordinates) {

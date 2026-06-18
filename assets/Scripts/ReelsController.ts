@@ -24,12 +24,21 @@ export class ReelsController extends Component {
     public outcome: Node[][] = [[], [], [], [], []];
 
     public stop() {
-        this.reelControllers.forEach((reelController, index) => {
-            if (index == 4) {
-                reelController.onStopped = this.onStopped.bind(this);
+        this.stopReel(0);
+    }
+
+    private stopReel(index: number) {
+        const reel = this.reelControllers[index];
+
+        reel.onStopped = () => {
+            if (index < this.reelControllers.length - 1) {
+                this.stopReel(index + 1);
+            } else {
+                this.onStopped();
             }
-            reelController.stop();
-        })
+        };
+
+        reel.stop();
     }
 
     public run() {
@@ -49,13 +58,12 @@ export class ReelsController extends Component {
     }
 
     public isStopped() {
-        return this.reelControllers[0].isStopped();
+        return this.reelControllers[4].isStopped();
     }
 
     public onStopped() {
         this.saveOutcome();
-        this.winChecker.checkWin(this.outcome);
-        this.betline.draw();
+        this.winChecker.checkWin(this.outcome, this.betline);
     }
 
     public saveOutcome() {
