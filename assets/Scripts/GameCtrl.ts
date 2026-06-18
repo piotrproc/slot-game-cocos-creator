@@ -27,7 +27,10 @@ export class GameCtrl extends Component {
 
         this.spinButton.on(Node.EventType.TOUCH_START, () => {
             this.reelsController.toggle();
-            this.betline.draw();
+
+            // if(this.reelsController.isStopped()) {
+            //     this.betline.draw();
+            // }
         });
     }
 

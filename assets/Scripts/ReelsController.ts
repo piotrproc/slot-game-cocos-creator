@@ -1,5 +1,5 @@
-import { _decorator, Component } from 'cc';
-import { ReelController } from "db://assets/Scripts/ReelController";
+import { _decorator, Component, Node } from 'cc';
+import { ReelController } from "./ReelController";
 
 const {ccclass, property} = _decorator;
 
@@ -8,6 +8,8 @@ export class ReelsController extends Component {
 
     @property([ReelController])
     reelControllers: ReelController[] = [];
+
+    public outcome: Node[][] = [[],[],[],[],[]];
 
     public stop() {
         this.reelControllers.forEach(reelController => {
@@ -23,19 +25,23 @@ export class ReelsController extends Component {
     }
 
     public toggle() {
-        if (this.reelControllers[0].hasStopped) {
+        if (this.isStopped()) {
             this.run();
         } else {
             this.stop();
         }
     }
 
+    public isStopped() {
+        return this.reelControllers[0].hasStopped;
+    }
+
     public saveOutcome() {
-        const outcome = this.reelControllers.map((controller) => {
+        this.outcome = this.reelControllers.map((controller) => {
             return controller.outcome;
         })
 
-        console.log(outcome);
+        console.log(this.outcome);
     }
 }
 
