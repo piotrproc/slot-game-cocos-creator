@@ -37,7 +37,7 @@ export class WinChecker extends Component {
 
         for (let i = 1; i < coordinates.length; i++) {
             const symbolCheck = symbolOutcomes[i][coordinates[i]];
-            if (symbol["_name"] != symbolCheck["_name"] && symbol["_name"] != WILD) {
+            if (symbol["_name"] != symbolCheck["_name"] && symbolCheck["_name"] != WILD) {
                 break;
             }
             symbolsOnBetlineWin++;
