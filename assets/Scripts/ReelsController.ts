@@ -1,5 +1,6 @@
 import { _decorator, Component, Node } from 'cc';
 import { ReelController } from "./ReelController";
+import { Betline } from "./Betline";
 
 const {ccclass, property} = _decorator;
 
@@ -9,16 +10,23 @@ export class ReelsController extends Component {
     @property([ReelController])
     reelControllers: ReelController[] = [];
 
+    @property({
+        type: Betline
+    })
+    public betline: Betline;
+
     public outcome: Node[][] = [[],[],[],[],[]];
 
     public stop() {
         this.reelControllers.forEach(reelController => {
+            reelController.onStopped = this.onStopped.bind(this);
             reelController.stop();
         })
-        this.saveOutcome();
     }
 
     public run() {
+        this.betline.clear();
+
         this.reelControllers.forEach(reelController => {
             reelController.run();
         })
@@ -33,7 +41,12 @@ export class ReelsController extends Component {
     }
 
     public isStopped() {
-        return this.reelControllers[0].hasStopped;
+        return this.reelControllers[0].isStopped();
+    }
+
+    public onStopped() {
+        this.saveOutcome();
+        this.betline.draw();
     }
 
     public saveOutcome() {

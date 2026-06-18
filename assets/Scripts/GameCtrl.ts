@@ -17,20 +17,11 @@ export class GameCtrl extends Component {
     })
     public spinButton: Node;
 
-    @property({
-        type: Betline
-    })
-    public betline: Betline;
-
     initListener() {
         input.on(Input.EventType.KEY_DOWN, this.onKeyDown, this);
 
         this.spinButton.on(Node.EventType.TOUCH_START, () => {
             this.reelsController.toggle();
-
-            // if(this.reelsController.isStopped()) {
-            //     this.betline.draw();
-            // }
         });
     }
 

@@ -1,5 +1,6 @@
 import { _decorator, Component, instantiate, Node, Prefab, SpriteFrame } from 'cc';
 import { SYMBOL_SIZE } from "./utils/consts";
+import { GameState } from "./utils/types";
 
 const {ccclass, property} = _decorator;
 
@@ -13,12 +14,10 @@ export class ReelController extends Component {
     private symbolHeight = SYMBOL_SIZE;
     public outcome: Node[] = [];
 
-    public hasStopped = false;
-    private isStopping = false;
+    public state: GameState;
 
     onLoad() {
-
-        this.hasStopped = true;
+        this.state = "Initial";
 
         for (let i = 0; i < this.symbolPrefabs.length; i++) {
 
@@ -37,7 +36,7 @@ export class ReelController extends Component {
 
     update(deltaTime: number) {
 
-        if (this.hasStopped) {
+        if (this.isStopped()) {
             return;
         }
 
@@ -60,25 +59,33 @@ export class ReelController extends Component {
                     topY + this.symbolHeight
                 );
 
-                if (this.isStopping == true) {
-                    this.hasStopped = true;
-                    this.isStopping = false;
+                if (this.state === "Stopping") {
+                    this.state = "Stopped";
                     this.saveOutcome();
+                    this.onStopped();
                 }
             }
         }
     }
 
+    public onStopped() {
+        // empty on purpose
+    }
+
     public stop() {
-        this.isStopping = true;
+        this.state = "Stopping";
+    }
+
+    public isStopped() {
+        return this.state === "Stopped" || this.state === "Initial";
     }
 
     public run() {
-        this.hasStopped = false;
+        this.state = "Running";
     }
 
     public toggle() {
-        if (this.hasStopped) {
+        if (this.state == "Stopped") {
             this.run();
         } else {
             this.stop();
@@ -98,7 +105,7 @@ export class ReelController extends Component {
     private saveOutcome() {
         const symbolsCopy = this.symbols.slice();
 
-        symbolsCopy.sort((n1,n2) => {
+        symbolsCopy.sort((n1, n2) => {
             if (n1.position.y > n2.position.y) {
                 return 1;
             }
