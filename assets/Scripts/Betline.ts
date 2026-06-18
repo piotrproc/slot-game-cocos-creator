@@ -1,9 +1,8 @@
 import { _decorator, Color, Component, Graphics, GraphicsComponent } from 'cc';
 import { SYMBOL_SIZE } from "./utils/consts";
+import { BetlineCoordinates } from './utils/types';
 
 const {ccclass} = _decorator;
-
-type Coordinates = [0|1|2, 0|1|2, 0|1|2, 0|1|2, 0|1|2];
 
 @ccclass('Betline')
 export class Betline extends Component {
@@ -24,7 +23,7 @@ export class Betline extends Component {
         this.drawLine([0, 1, 2, 1, 2]);
     }
 
-    drawLine(coordinates: Coordinates) {
+    drawLine(coordinates: BetlineCoordinates) {
 
         this.graphics.moveTo(0, coordinates[0] * (-this.symbolSize));
 
