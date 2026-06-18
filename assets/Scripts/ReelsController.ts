@@ -1,6 +1,7 @@
-import { _decorator, Component, Node } from 'cc';
+import { _decorator, Component } from 'cc';
 import { ReelController } from "db://assets/Scripts/ReelController";
-const { ccclass, property } = _decorator;
+
+const {ccclass, property} = _decorator;
 
 @ccclass('ReelsController')
 export class ReelsController extends Component {
@@ -12,6 +13,7 @@ export class ReelsController extends Component {
         this.reelControllers.forEach(reelController => {
             reelController.stop();
         })
+        this.saveOutcome();
     }
 
     public run() {
@@ -21,11 +23,20 @@ export class ReelsController extends Component {
     }
 
     public toggle() {
-        this.reelControllers.forEach(reelController => {
-            reelController.toggle();
-        })
+        if (this.reelControllers[0].hasStopped) {
+            this.run();
+        } else {
+            this.stop();
+        }
     }
 
+    public saveOutcome() {
+        const outcome = this.reelControllers.map((controller) => {
+            return controller.outcome;
+        })
+
+        console.log(outcome);
+    }
 }
 
 

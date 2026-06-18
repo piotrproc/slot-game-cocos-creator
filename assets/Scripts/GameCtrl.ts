@@ -10,7 +10,7 @@ export class GameCtrl extends Component {
     @property({
         type: ReelsController
     })
-    public reelController: ReelsController;
+    public reelsController: ReelsController;
 
     @property({
         type: Node
@@ -26,7 +26,7 @@ export class GameCtrl extends Component {
         input.on(Input.EventType.KEY_DOWN, this.onKeyDown, this);
 
         this.spinButton.on(Node.EventType.TOUCH_START, () => {
-            this.reelController.toggle();
+            this.reelsController.toggle();
             this.betline.draw();
         });
     }
@@ -35,12 +35,12 @@ export class GameCtrl extends Component {
     onKeyDown(event: EventKeyboard) {
         switch (event.keyCode) {
             case KeyCode.KEY_Q:
-                this.reelController.run();
+                this.reelsController.run();
                 break;
             case KeyCode.KEY_P:
                 break;
             case KeyCode.KEY_W:
-                this.reelController.stop();
+                this.reelsController.stop();
                 break;
         }
     }

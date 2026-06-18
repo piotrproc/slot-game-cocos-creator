@@ -1,4 +1,5 @@
 import { _decorator, Component, instantiate, Node, Prefab, SpriteFrame } from 'cc';
+import { SYMBOL_SIZE } from "./utils/consts";
 
 const {ccclass, property} = _decorator;
 
@@ -9,9 +10,10 @@ export class ReelController extends Component {
     symbolPrefabs: Prefab[] = [];
 
     private symbols: Node[] = [];
-    private symbolHeight = 250;
+    private symbolHeight = SYMBOL_SIZE;
+    public outcome: Node[] = [];
 
-    private hasStopped = false;
+    public hasStopped = false;
     private isStopping = false;
 
     onLoad() {
@@ -61,6 +63,7 @@ export class ReelController extends Component {
                 if (this.isStopping == true) {
                     this.hasStopped = true;
                     this.isStopping = false;
+                    this.saveOutcome();
                 }
             }
         }
@@ -90,6 +93,29 @@ export class ReelController extends Component {
         }
 
         return top;
+    }
+
+    private saveOutcome() {
+        const symbolsCopy = this.symbols.slice();
+
+        symbolsCopy.sort((n1,n2) => {
+            if (n1.position.y > n2.position.y) {
+                return 1;
+            }
+
+            if (n1.position.y < n2.position.y) {
+                return -1;
+            }
+
+            return 0;
+        });
+
+        this.outcome[0] = symbolsCopy[2];
+        this.outcome[1] = symbolsCopy[1];
+        this.outcome[2] = symbolsCopy[0];
+
+        console.log(this.outcome);
+
     }
 }
 
