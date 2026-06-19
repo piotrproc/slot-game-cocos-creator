@@ -1,6 +1,5 @@
 import { _decorator, Component, EventKeyboard, Input, input, KeyCode, Node } from 'cc';
 import { ReelsController } from './ReelsController';
-import { Betline } from "./Betline";
 
 const {ccclass, property} = _decorator;
 

@@ -2,13 +2,16 @@ import { _decorator, Component, Node } from 'cc';
 import { ReelController } from "./ReelController";
 import { Betline } from "./Betline";
 import { WinChecker } from "./win/WinChecker";
+import { AudioController } from "./AudioController";
 
 const {ccclass, property} = _decorator;
 
 @ccclass('ReelsController')
 export class ReelsController extends Component {
 
-    @property([ReelController])
+    @property({
+        type: [ReelController]
+    })
     reelControllers: ReelController[] = [];
 
     @property({
@@ -20,6 +23,11 @@ export class ReelsController extends Component {
         type: WinChecker
     })
     public winChecker: WinChecker;
+
+    @property({
+        type: AudioController
+    })
+    public audioController: AudioController;
 
     public outcome: Node[][] = [[], [], [], [], []];
 
@@ -44,6 +52,7 @@ export class ReelsController extends Component {
     public run() {
         this.betline.clear();
         this.winChecker.onNewSpin();
+        this.audioController.onAudioQueue(0)
 
         this.reelControllers.forEach(reelController => {
             reelController.run();
@@ -64,7 +73,7 @@ export class ReelsController extends Component {
 
     public onStopped() {
         this.saveOutcome();
-        this.winChecker.checkWin(this.outcome, this.betline);
+        this.winChecker.checkWin(this.outcome, this.betline, this.audioController);
     }
 
     public saveOutcome() {

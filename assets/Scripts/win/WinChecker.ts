@@ -2,7 +2,8 @@ import { _decorator, Component, Label, Node } from 'cc';
 import { BetlineCoordinates, WILD } from "../utils/types";
 import { BETLINES_DATA, PAYTABLE_DATA } from "../win/BetlinesData";
 import { Betline } from "../Betline";
-import { INIT_BALANCE, SPIN_COST } from "db://assets/Scripts/utils/consts";
+import { INIT_BALANCE, SPIN_COST } from "../utils/consts";
+import { AudioController } from "../AudioController";
 
 const {ccclass, property} = _decorator;
 
@@ -55,7 +56,7 @@ export class WinChecker extends Component {
         this.setWin(0);
     }
 
-    checkWin(symbolOutcomes: Node[][], betline: Betline) {
+    checkWin(symbolOutcomes: Node[][], betline: Betline, audioController: AudioController) {
         this.setWin(this.winValue);
 
         for (let coordinates of BETLINES_DATA) {
@@ -72,6 +73,10 @@ export class WinChecker extends Component {
                 // console.log(betlineWinObject);
                 // console.log(symbolOutcomes)
             }
+        }
+
+        if(this.winValue > 0) {
+            audioController.onAudioQueue(1);
         }
     }
 
