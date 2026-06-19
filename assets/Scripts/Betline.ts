@@ -16,11 +16,6 @@ export class Betline extends Component {
 
         this.graphics.lineWidth = 8;
         this.graphics.strokeColor = new Color(255, 0, 0, 255);
-
-        // this.drawLine(g, [0,0,0,0,0]);
-        // this.drawLine(g, [0,1,0,1,0]);
-        // this.drawLine(g, [2, 1, 0, 1, 2]);
-        // this.drawLine([0, 1, 2, 1, 2]);
     }
 
     drawLine(coordinates: BetlineCoordinates) {

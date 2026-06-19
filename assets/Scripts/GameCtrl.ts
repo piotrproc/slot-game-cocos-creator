@@ -24,16 +24,10 @@ export class GameCtrl extends Component {
         });
     }
 
-    //testing - method DELETE ME IN FINAL VERSION
     onKeyDown(event: EventKeyboard) {
         switch (event.keyCode) {
-            case KeyCode.KEY_Q:
-                this.reelsController.run();
-                break;
-            case KeyCode.KEY_P:
-                break;
-            case KeyCode.KEY_W:
-                this.reelsController.stop();
+            case KeyCode.SPACE:
+                this.reelsController.toggle();
                 break;
         }
     }

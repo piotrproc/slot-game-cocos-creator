@@ -7,8 +7,6 @@ import { AudioController } from "../AudioController";
 
 const {ccclass, property} = _decorator;
 
-// type WinType = 3 | 4 | 5;
-
 type BetlineWinType = {
     symbol: string;
     symbolsOnBetlineWin: number;
