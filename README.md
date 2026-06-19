@@ -11,6 +11,10 @@ Just open the project in Cocos Creator program.
 - Animations are executed by standard UI positioning
 - Assets are taken from: https://github.com/gamecocos/gameSlots
 - Sound is added to the game
+- Game was created with the help from AI in following areas:
+  - symbol animations
+  - betlines creation
+  - bug fixing
 
 ## Notes
 
