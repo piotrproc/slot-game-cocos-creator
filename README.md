@@ -19,4 +19,5 @@ Just open the project in Cocos Creator program.
 ## Notes
 
 - Game has a fixed size - you need to adjust resolution of your browser to play the game
-    - Game <ins>is not supported on landscape mode on mobile</ins> at the time    
+  - Game <ins>is not supported on landscape mode on mobile</ins> at the time
+- This game is skill-dependant. It <ins>is not standard random</ins> slot game.     
