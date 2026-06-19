@@ -43,6 +43,7 @@ export class ReelsController extends Component {
 
     public run() {
         this.betline.clear();
+        this.winChecker.onNewSpin();
 
         this.reelControllers.forEach(reelController => {
             reelController.run();
