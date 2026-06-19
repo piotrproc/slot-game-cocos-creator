@@ -49,6 +49,10 @@ export class WinChecker extends Component {
         this.setWin(0);
     }
 
+    hasEnoughMoneyToSpin() {
+        return this.balanceValue >= SPIN_COST;
+    }
+
     onLoad() {
         this.setBalance(INIT_BALANCE);
         this.setWin(0);

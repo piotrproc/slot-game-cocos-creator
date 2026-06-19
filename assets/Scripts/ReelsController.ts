@@ -3,7 +3,6 @@ import { ReelController } from "./ReelController";
 import { Betline } from "./Betline";
 import { WinChecker } from "./win/WinChecker";
 import { AudioController } from "./AudioController";
-import { SPIN_COST } from "db://assets/Scripts/utils/consts";
 
 const {ccclass, property} = _decorator;
 
@@ -62,7 +61,7 @@ export class ReelsController extends Component {
 
     public toggle() {
         if (this.isStopped()) {
-            if (this.winChecker.balanceValue >= SPIN_COST) {
+            if (this.winChecker.hasEnoughMoneyToSpin()) {
                 this.run();
             }
         } else {
