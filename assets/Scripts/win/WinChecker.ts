@@ -69,9 +69,6 @@ export class WinChecker extends Component {
                 this.setWin(this.winValue);
                 this.setBalance(this.balanceValue);
                 betline.drawLine(betlineWinObject.coordinates);
-                // console.log("============");
-                // console.log(betlineWinObject);
-                // console.log(symbolOutcomes)
             }
         }
 

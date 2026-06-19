@@ -1,3 +1,4 @@
 export type GameState = "Initial" | "Stopping" | "Stopped" | "Running";
-export type BetlineCoordinates = [0|1|2, 0|1|2, 0|1|2, 0|1|2, 0|1|2];
+export type SymbolIndex = 0|1|2;
+export type BetlineCoordinates = [SymbolIndex, SymbolIndex, SymbolIndex, SymbolIndex, SymbolIndex];
 export const WILD = "item0";

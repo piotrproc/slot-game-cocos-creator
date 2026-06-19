@@ -67,7 +67,6 @@ export class ReelController extends Component {
                 if (this.state === "Stopping") {
                     this.state = "Stopped";
                     this.saveOutcome();
-                    // console.log("stopped", this.index);
                     this.onStopped();
                 }
             }
@@ -126,8 +125,6 @@ export class ReelController extends Component {
         this.outcome[0] = symbolsCopy[2];
         this.outcome[1] = symbolsCopy[1];
         this.outcome[2] = symbolsCopy[0];
-        // console.log(this.outcome)
-        // console.log(this.index)
     }
 }
 
