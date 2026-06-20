@@ -1,8 +1,8 @@
 import { _decorator, Component, Label, Node } from 'cc';
-import { BetlineCoordinates, WILD } from "../utils/types";
+import { BetlineCoordinates } from "../utils/types";
 import { BETLINES_DATA, PAYTABLE_DATA } from "../win/BetlinesData";
 import { Betline } from "../Betline";
-import { INIT_BALANCE, SPIN_COST } from "../utils/consts";
+import { INIT_BALANCE, SPIN_COST, WILD } from "../utils/consts";
 import { AudioController } from "../AudioController";
 
 const {ccclass, property} = _decorator;
