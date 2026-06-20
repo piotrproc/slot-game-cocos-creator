@@ -1945,11 +1945,11 @@
         "__expectedType__": "cc.Prefab"
       },
       {
-        "__uuid__": "f9d69801-bfe3-41db-9359-b787193da19b",
+        "__uuid__": "39c235de-9f84-401f-b29d-cdf8e80bcdaa",
         "__expectedType__": "cc.Prefab"
       },
       {
-        "__uuid__": "f9d69801-bfe3-41db-9359-b787193da19b",
+        "__uuid__": "515fa521-82bf-4aee-90b3-db0538b95a37",
         "__expectedType__": "cc.Prefab"
       },
       {
@@ -1966,6 +1966,66 @@
       },
       {
         "__uuid__": "970e37de-0554-4161-ba8a-c6787f329cbf",
+        "__expectedType__": "cc.Prefab"
+      },
+      {
+        "__uuid__": "4239697d-c32c-4bc4-b003-02e8f958cf28",
+        "__expectedType__": "cc.Prefab"
+      },
+      {
+        "__uuid__": "46ec3a78-5823-45b4-9543-1b8176340013",
+        "__expectedType__": "cc.Prefab"
+      },
+      {
+        "__uuid__": "926bdfb7-992f-4ced-9e61-312cc9d47519",
+        "__expectedType__": "cc.Prefab"
+      },
+      {
+        "__uuid__": "f9d69801-bfe3-41db-9359-b787193da19b",
+        "__expectedType__": "cc.Prefab"
+      },
+      {
+        "__uuid__": "926bdfb7-992f-4ced-9e61-312cc9d47519",
+        "__expectedType__": "cc.Prefab"
+      },
+      {
+        "__uuid__": "515fa521-82bf-4aee-90b3-db0538b95a37",
+        "__expectedType__": "cc.Prefab"
+      },
+      {
+        "__uuid__": "4239697d-c32c-4bc4-b003-02e8f958cf28",
+        "__expectedType__": "cc.Prefab"
+      },
+      {
+        "__uuid__": "926bdfb7-992f-4ced-9e61-312cc9d47519",
+        "__expectedType__": "cc.Prefab"
+      },
+      {
+        "__uuid__": "01e56647-b20c-4fdd-9793-6ddb034c54d9",
+        "__expectedType__": "cc.Prefab"
+      },
+      {
+        "__uuid__": "433a3f80-fbe1-47a9-88a8-90e5d6c0a7f4",
+        "__expectedType__": "cc.Prefab"
+      },
+      {
+        "__uuid__": "4239697d-c32c-4bc4-b003-02e8f958cf28",
+        "__expectedType__": "cc.Prefab"
+      },
+      {
+        "__uuid__": "ab418d13-ed20-4798-a0fa-fa4dd7449a44",
+        "__expectedType__": "cc.Prefab"
+      },
+      {
+        "__uuid__": "515fa521-82bf-4aee-90b3-db0538b95a37",
+        "__expectedType__": "cc.Prefab"
+      },
+      {
+        "__uuid__": "39c235de-9f84-401f-b29d-cdf8e80bcdaa",
+        "__expectedType__": "cc.Prefab"
+      },
+      {
+        "__uuid__": "f9d69801-bfe3-41db-9359-b787193da19b",
         "__expectedType__": "cc.Prefab"
       }
     ],
@@ -2058,7 +2118,7 @@
         "__expectedType__": "cc.Prefab"
       },
       {
-        "__uuid__": "f9d69801-bfe3-41db-9359-b787193da19b",
+        "__uuid__": "ab418d13-ed20-4798-a0fa-fa4dd7449a44",
         "__expectedType__": "cc.Prefab"
       },
       {
@@ -2070,7 +2130,7 @@
         "__expectedType__": "cc.Prefab"
       },
       {
-        "__uuid__": "f9d69801-bfe3-41db-9359-b787193da19b",
+        "__uuid__": "39c235de-9f84-401f-b29d-cdf8e80bcdaa",
         "__expectedType__": "cc.Prefab"
       },
       {
